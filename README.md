@@ -40,6 +40,6 @@ So I wrote it.
 
 or to get a response on a given service name called callback:
 
-*Format:* `{"service":"<service name of the service to call>", "data":"<the data to give to the service>", "callback": "service name of the service to get the response"}`
+*Format:* `{"service":"<service name of the service to call>", "data":"<the data to give to the service>", "callback": "service name of the service to call to send the response"}`
 
 
