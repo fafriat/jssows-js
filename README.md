@@ -102,4 +102,7 @@ Unbind a given service name.
 
     jssowsServices.unbind('navigation');
 
+### Donate!
 
+Help me continuing to work on the JSSOWS projects.
+[Donate with PayPal.](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=YPXUQJM6ACZNG&lc=FR&item_name=JSSOWS&item_number=JSSOWS&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
