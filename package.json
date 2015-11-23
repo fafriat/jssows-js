@@ -1,0 +1,33 @@
+{
+  "name": "jssows-js",
+  "version": "0.1.0",
+  "description": "Json Standard Services Over WebSocket sub protocol",
+  "homepage": "https://github.com/fafriat/jssows-js",
+  "main": "jssows.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "websocket",
+    "json",
+    "service",
+    "services",
+    "callback",
+    "handler",
+    "sub",
+    "protocol"
+  ],  
+  "author": "Frank Afriat <frank.afriat@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:fafriat/jssows-js.git"
+  },
+  "licenses": [{
+    "type": "Apache-2.0",
+    "url": "http://www.apache.org/licenses/LICENSE-2.0"
+  }],
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4"
+  }
+}
