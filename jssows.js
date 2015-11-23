@@ -1,16 +1,18 @@
-//Copyright 2015 Frank Afriat
-//
-//   Licensed under the Apache License, Version 2.0 (the "License");
-//   you may not use this file except in compliance with the License.
-//   You may obtain a copy of the License at
-//
-//       http://www.apache.org/licenses/LICENSE-2.0
-//
-//   Unless required by applicable law or agreed to in writing, software
-//   distributed under the License is distributed on an "AS IS" BASIS,
-//   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//   See the License for the specific language governing permissions and
-//   limitations under the License.
+/*
+    Copyright 2015 Frank Afriat
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+*/
 (function (root, factory) {
     if (typeof exports === 'object') {
         module.exports = factory();
@@ -43,25 +45,22 @@
                 console.info('JSSOWS received on websocket:' + evt.data);
             }
             var jsonMessage = JSON.parse(evt.data);
-            var service = jsonMessage['service'];
+            var service = jsonMessage.service;
             if (service === undefined) {
                 self.internal.callUnknownHandler(jsonMessage);
                 return;
             }
-            ;
             var handler = self.internal.getBinding(service);
             if (handler === undefined) {
                 self.internal.callUnknownHandler(jsonMessage);
                 return;
             }
-            ;
-            var data = jsonMessage['data'];
-            var callback = jsonMessage['callback'];
+            var data = jsonMessage.data;
+            var callback = jsonMessage.callback;
             var shouldRemove = handler(data, callback);
             if (shouldRemove) {
                 self.unbind(service);
             }
-            ;
         };
         self.internal.bindCallback = function (callback) {
             var callId = ++self.callCounter;
@@ -76,9 +75,8 @@
             var toSendJson = {service: service, data: data};
             if (arguments.length === 3) {
                 var callbackId = self.internal.bindCallback(callback);
-                toSendJson['callback'] = callbackId;
+                toSendJson.callback = callbackId;
             }
-            ;
             var toSend = JSON.stringify(toSendJson);
             websocket.send(toSend);
         };
