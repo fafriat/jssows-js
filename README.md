@@ -1,6 +1,8 @@
 ## jssows-js
 Json Standard Services Over WebSocket sub protocol
 
+Please see http://github.com/JSSOWS/
+
 ###Motivation
 
 I looked for something similar on the web but did not find any **very very simple** standard sub protocol for calling services over websocket and getting a response. So I wrote it. Putting it there so it can be useful for others.
