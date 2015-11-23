@@ -8,30 +8,25 @@ So I wrote it.
 
 ##Getting started
 
-'''
+
+    var Jssows = require('jssows');
     var websocket = new WebSocket('ws://localhost:8887');
     
     var unknownHandler = function(jsonMessage) {
         console.info('Unknown service ' + jsonMessage.service);
     };
     
-    var jwspserver = new Jssows(websocket, unknownHandler);
+    var jssowsServices = new Jssows(websocket, unknownHandler);
     
     var bindingHandler = function(jsonMessage) {
-        require([ jsonMessage.modelName ], function(model) {
-            console.info('Before mise a jour...' + jsonMessage.modelName);
-            ko.mapping.fromJS(jsonMessage.model, model);
-            console.info('Model mis a jour !' + jsonMessage.modelName);
-        });
+        <yourcode>
     };
-    jwspserver.bind('binding', bindingHandler);
+    jssowsServices.bind('binding', bindingHandler);
     
     var navigationHandler =  function(jsonMessage) {
-        console.info('Before navigation...' + jsonMessage.hash);
-        router.navigate(jsonMessage.hash);
-        console.info('After navigation...' + jsonMessage.hash);
+        <yourcode>
     };
-    jwspserver.bind('navigation', navigationHandler);
-'''
+    jssowsServices.bind('navigation', navigationHandler);
+
 
 
