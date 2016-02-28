@@ -1,6 +1,6 @@
 {
   "name": "jssows-js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Json Standard Services Over WebSocket sub protocol",
   "homepage": "https://github.com/fafriat/jssows-js",
   "main": "jssows.js",

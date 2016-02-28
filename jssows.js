@@ -78,7 +78,7 @@
                 toSendJson.callback = callbackId;
             }
             var toSend = JSON.stringify(toSendJson);
-            websocket.send(toSend);
+            self.websocket.send(toSend);
         };
         self.bind = function (service, handler) {
             self.bindings[service] = handler;
